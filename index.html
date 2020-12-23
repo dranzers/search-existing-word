@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+        function checkmatch(paramText, paramSearch)
+        {
+            let splitText = paramText.toLowerCase().split(" ");
+            let splitSearch = paramSearch.toLowerCase().split(" ");
+
+            let countSimiliar = [];
+            for (let index = 0; index < splitText.length; index++) {
+                for (let child = 0; child < splitSearch.length; child++) {
+                    if(splitText[index] == splitSearch[child]){
+                        countSimiliar.push(splitText[index]);
+                    }
+                }
+            }
+
+            if(countSimiliar.length){
+                return 'true | hasil kata yang sama : '+countSimiliar.toString();
+            } else {
+                return 'false | tidak ada kata yang sama';
+            }
+            
+
+        }
+
+        let text   = 'Hello World';
+        let search = 'hello'
+        console.log(checkmatch(text, search));
+        
+    </script>
+</body>
+</html>
